@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -12,7 +11,7 @@
 
 <meta name="theme-color" content="#f3f6fa">
 
-<title>성균관대 식단</title>
+<title>성균관대 은행골 식단</title>
 
 <style>
 
@@ -21,17 +20,12 @@
     -webkit-tap-highlight-color: transparent;
 }
 
-html,
 body {
     margin: 0;
-    padding: 0;
-    width: 100%;
-    min-height: 100%;
-}
+    padding: 20px 15px 35px;
 
-body {
     background: #f3f6fa;
-    color: #222;
+
     font-family:
         -apple-system,
         BlinkMacSystemFont,
@@ -39,29 +33,26 @@ body {
         "Malgun Gothic",
         sans-serif;
 
-    padding: 18px 14px 30px;
+    color: #222;
 }
 
 .container {
-    width: 100%;
     max-width: 600px;
     margin: 0 auto;
 }
 
 
-/* =========================
-   제목
-========================= */
+/* 제목 */
 
 .header {
     text-align: center;
-    margin-bottom: 18px;
+    margin-bottom: 22px;
 }
 
 .header h1 {
-    margin: 5px 0 7px;
+    margin: 5px 0 8px;
 
-    font-size: 28px;
+    font-size: 30px;
     font-weight: 800;
 
     letter-spacing: -1.5px;
@@ -70,208 +61,152 @@ body {
 .header p {
     margin: 0;
 
-    font-size: 15px;
     color: #777;
+
+    font-size: 16px;
 }
 
 
-/* =========================
-   날짜
-========================= */
+/* 날짜 */
 
 .date-box {
-    background: #ffffff;
+    background: white;
 
-    border-radius: 18px;
+    border-radius: 20px;
 
-    padding: 15px;
+    padding: 18px;
 
-    margin-bottom: 15px;
+    margin-bottom: 18px;
 
     text-align: center;
 
     box-shadow:
-        0 3px 12px rgba(0,0,0,.07);
+        0 4px 15px rgba(0,0,0,.07);
 }
 
 .date {
-    font-size: 19px;
+    font-size: 20px;
     font-weight: 700;
 }
 
 
-/* =========================
-   식당 버튼
-========================= */
+/* 은행골 카드 */
 
-.restaurant-buttons {
+.restaurant-card {
+    background: white;
 
-    display: grid;
+    border-radius: 22px;
 
-    grid-template-columns:
-        repeat(3, 1fr);
-
-    gap: 10px;
-
-    margin-bottom: 18px;
-}
-
-.restaurant-button {
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    min-height: 62px;
-
-    border: none;
-
-    border-radius: 17px;
-
-    background: #ffffff;
-
-    color: #222;
-
-    text-decoration: none;
-
-    font-size: 18px;
-
-    font-weight: 800;
+    padding: 25px 20px;
 
     box-shadow:
-        0 3px 12px rgba(0,0,0,.08);
-
-    transition:
-        transform .12s ease,
-        background .12s ease;
-}
-
-.restaurant-button:active {
-    transform: scale(.95);
-}
-
-.restaurant-button.bank {
-    background: #eaf2ff;
-}
-
-.restaurant-button.law {
-    background: #edf8ef;
-}
-
-.restaurant-button.gold {
-    background: #fff7df;
-}
-
-
-/* =========================
-   안내 카드
-========================= */
-
-.info-card {
-
-    background: #ffffff;
-
-    border-radius: 20px;
-
-    padding: 22px 18px;
-
-    box-shadow:
-        0 4px 15px rgba(0,0,0,.08);
+        0 5px 18px rgba(0,0,0,.08);
 
     text-align: center;
 }
 
-.info-title {
 
-    font-size: 22px;
+/* 은행골 이름 */
+
+.restaurant-name {
+    font-size: 28px;
 
     font-weight: 800;
 
-    margin-bottom: 8px;
+    margin-bottom: 10px;
 }
 
-.info-text {
 
+/* 위치 */
+
+.location {
     color: #777;
 
     font-size: 14px;
 
     line-height: 1.7;
 
-    margin-bottom: 18px;
+    margin-bottom: 20px;
 }
 
 
-/* =========================
-   공식 페이지 버튼
-========================= */
+/* 메뉴 보기 버튼 */
 
-.official-button {
+.menu-button {
 
     display: block;
 
     width: 100%;
 
-    padding: 16px 10px;
+    padding: 18px 10px;
 
-    border-radius: 14px;
+    border-radius: 16px;
 
-    background: #1f6feb;
+    background: #eaf2ff;
 
-    color: white;
+    color: #222;
 
     text-decoration: none;
 
-    font-size: 17px;
+    font-size: 20px;
 
-    font-weight: 700;
+    font-weight: 800;
+
+    transition:
+        transform .12s ease,
+        opacity .12s ease;
 }
 
-.official-button:active {
+.menu-button:active {
+    transform: scale(.97);
     opacity: .8;
 }
 
 
-/* =========================
-   하단
-========================= */
+/* 설명 */
+
+.description {
+
+    margin-top: 18px;
+
+    color: #888;
+
+    font-size: 13px;
+
+    line-height: 1.7;
+}
+
+
+/* 하단 */
 
 .footer {
 
     text-align: center;
 
-    margin-top: 20px;
-
-    font-size: 12px;
+    margin-top: 22px;
 
     color: #999;
+
+    font-size: 12px;
 }
 
 
-/* =========================
-   작은 휴대폰
-========================= */
+/* 작은 화면 */
 
 @media (max-width: 380px) {
 
-    body {
-        padding:
-            14px 10px 25px;
+    .header h1 {
+        font-size: 26px;
     }
 
-    .header h1 {
+    .restaurant-name {
         font-size: 25px;
     }
 
-    .restaurant-button {
-        min-height: 58px;
-        font-size: 16px;
+    .menu-button {
+        font-size: 18px;
     }
 
-    .info-title {
-        font-size: 21px;
-    }
 }
 
 </style>
@@ -299,7 +234,7 @@ body {
     </div>
 
 
-    <!-- 날짜 -->
+    <!-- 오늘 날짜 -->
 
     <div class="date-box">
 
@@ -311,85 +246,50 @@ body {
     </div>
 
 
-    <!-- 식당 버튼 -->
+    <!-- 은행골 -->
 
-    <div class="restaurant-buttons">
+    <div class="restaurant-card">
+
+        <div class="restaurant-name">
+
+            은행골식당
+
+        </div>
 
 
-        <!-- 은행골 -->
+        <div class="location">
+
+            600주년기념관 지하 1층<br>
+
+            ☎ 02-740-1926
+
+        </div>
+
+
+        <!-- 정확한 은행골 공식 메뉴 주소 -->
 
         <a
-            class="restaurant-button bank"
+            class="menu-button"
             href="https://www.skku.edu/skku/campus/support/welfare_11.do?mode=info&conspaceCd=10201031&srResId=2&srShowTime=D&srCategory=L">
 
-            은행골
+            🍚 오늘의 은행골 메뉴 보기
 
         </a>
 
 
-        <!-- 법고을 -->
+        <div class="description">
 
-        <a
-            class="restaurant-button law"
-            href="https://www.skku.edu/skku/campus/support/welfare_11.do?mode=info&conspaceCd=10201031&srResId=3&srShowTime=D&srCategory=L">
-
-            법고을
-
-        </a>
-
-
-        <!-- 금잔디 -->
-
-        <a
-            class="restaurant-button gold"
-            href="https://www.skku.edu/skku/campus/support/welfare_11.do?mode=info&conspaceCd=10201031&srResId=4&srShowTime=D&srCategory=L">
-
-            금잔디
-
-        </a>
-
-    </div>
-
-
-    <!-- 안내 -->
-
-    <div class="info-card">
-
-        <div
-            class="info-title"
-            id="selectedName">
-
-            식당을 선택하세요
+            성균관대학교 공식 식단 페이지로<br>
+            이동합니다.
 
         </div>
-
-
-        <div
-            class="info-text"
-            id="selectedText">
-
-            위의 버튼을 누르면<br>
-            성균관대학교 공식 식단 페이지가 열립니다.
-
-        </div>
-
-
-        <a
-            class="official-button"
-            href="https://www.skku.edu/skku/campus/support/welfare_11.do"
-            target="_blank"
-            rel="noopener">
-
-            성균관대 전체 식단 보기
-
-        </a>
 
     </div>
 
 
     <div class="footer">
 
-        성균관대학교 공식 식당 메뉴
+        성균관대학교 공식 은행골식당 메뉴
 
     </div>
 
@@ -398,9 +298,7 @@ body {
 
 <script>
 
-/* =========================
-   오늘 날짜
-========================= */
+/* 오늘 날짜 */
 
 function showToday() {
 
@@ -416,77 +314,19 @@ function showToday() {
         "토요일"
     ];
 
-    const year =
-        now.getFullYear();
-
-    const month =
-        now.getMonth() + 1;
-
-    const date =
-        now.getDate();
-
-    const day =
+    const text =
+        now.getFullYear() +
+        "년 " +
+        (now.getMonth() + 1) +
+        "월 " +
+        now.getDate() +
+        "일 " +
         days[now.getDay()];
-
 
     document.getElementById(
         "today"
-    ).textContent =
-
-        year + "년 " +
-        month + "월 " +
-        date + "일 " +
-        day;
-
+    ).textContent = text;
 }
-
-
-/* =========================
-   버튼 이름 표시
-========================= */
-
-const buttons =
-    document.querySelectorAll(
-        ".restaurant-button"
-    );
-
-const selectedName =
-    document.getElementById(
-        "selectedName"
-    );
-
-const selectedText =
-    document.getElementById(
-        "selectedText"
-    );
-
-
-buttons.forEach(function(button) {
-
-    button.addEventListener(
-        "click",
-        function() {
-
-            const name =
-                button.textContent.trim();
-
-            selectedName.textContent =
-                name;
-
-            selectedText.innerHTML =
-                name +
-                " 메뉴 페이지로<br>" +
-                "이동합니다.";
-
-        }
-    );
-
-});
-
-
-/* =========================
-   시작
-========================= */
 
 showToday();
 
@@ -494,4 +334,3 @@ showToday();
 
 </body>
 </html>
-```
