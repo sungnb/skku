@@ -11,7 +11,7 @@
 
 <meta name="theme-color" content="#f3f6fa">
 
-<title>성균관대 은행골 식단</title>
+<title>성균관대 식단</title>
 
 <style>
 
@@ -22,7 +22,7 @@
 
 body {
     margin: 0;
-    padding: 20px 15px 35px;
+    padding: 18px 14px 35px;
 
     background: #f3f6fa;
 
@@ -37,20 +37,23 @@ body {
 }
 
 .container {
+    width: 100%;
     max-width: 600px;
     margin: 0 auto;
 }
 
 
-/* 제목 */
+/* =========================
+   제목
+========================= */
 
 .header {
     text-align: center;
-    margin-bottom: 22px;
+    margin-bottom: 18px;
 }
 
 .header h1 {
-    margin: 5px 0 8px;
+    margin: 5px 0 7px;
 
     font-size: 30px;
     font-weight: 800;
@@ -63,127 +66,215 @@ body {
 
     color: #777;
 
-    font-size: 16px;
+    font-size: 15px;
 }
 
 
-/* 날짜 */
+/* =========================
+   날짜
+========================= */
 
 .date-box {
-    background: white;
+    background: #fff;
 
     border-radius: 20px;
 
-    padding: 18px;
+    padding: 17px;
 
-    margin-bottom: 18px;
+    margin-bottom: 15px;
 
     text-align: center;
 
     box-shadow:
-        0 4px 15px rgba(0,0,0,.07);
+        0 4px 14px rgba(0,0,0,.07);
 }
 
 .date {
     font-size: 20px;
-    font-weight: 700;
+    font-weight: 800;
 }
 
 
-/* 은행골 카드 */
+/* =========================
+   식당 버튼
+========================= */
 
-.restaurant-card {
-    background: white;
+.restaurant-buttons {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 10px;
+
+    margin-bottom: 18px;
+}
+
+.restaurant-button {
+    border: 0;
+
+    min-height: 62px;
+
+    border-radius: 17px;
+
+    font-size: 18px;
+    font-weight: 800;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 3px 12px rgba(0,0,0,.07);
+}
+
+.bank {
+    background: #eaf2ff;
+}
+
+.law {
+    background: #edf8ef;
+}
+
+.gold {
+    background: #fff6dc;
+}
+
+.restaurant-button:active {
+    transform: scale(.96);
+}
+
+
+/* =========================
+   메뉴 카드
+========================= */
+
+.menu-card {
+    background: #fff;
 
     border-radius: 22px;
 
-    padding: 25px 20px;
+    padding: 22px 17px;
 
     box-shadow:
         0 5px 18px rgba(0,0,0,.08);
-
-    text-align: center;
 }
 
 
-/* 은행골 이름 */
+/* 식당 이름 */
 
-.restaurant-name {
-    font-size: 28px;
+.restaurant-title {
+    text-align: center;
+
+    font-size: 27px;
 
     font-weight: 800;
 
-    margin-bottom: 10px;
+    margin-bottom: 5px;
 }
 
 
 /* 위치 */
 
-.location {
+.restaurant-location {
+    text-align: center;
+
     color: #777;
-
-    font-size: 14px;
-
-    line-height: 1.7;
-
-    margin-bottom: 20px;
-}
-
-
-/* 메뉴 보기 버튼 */
-
-.menu-button {
-
-    display: block;
-
-    width: 100%;
-
-    padding: 18px 10px;
-
-    border-radius: 16px;
-
-    background: #eaf2ff;
-
-    color: #222;
-
-    text-decoration: none;
-
-    font-size: 20px;
-
-    font-weight: 800;
-
-    transition:
-        transform .12s ease,
-        opacity .12s ease;
-}
-
-.menu-button:active {
-    transform: scale(.97);
-    opacity: .8;
-}
-
-
-/* 설명 */
-
-.description {
-
-    margin-top: 18px;
-
-    color: #888;
 
     font-size: 13px;
 
-    line-height: 1.7;
+    margin-bottom: 18px;
 }
 
 
-/* 하단 */
+/* 날짜 */
 
-.footer {
-
+.menu-date {
     text-align: center;
 
-    margin-top: 22px;
+    font-size: 17px;
+
+    font-weight: 700;
+
+    margin-bottom: 15px;
+}
+
+
+/* =========================
+   메뉴
+========================= */
+
+.menu-list {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 9px;
+}
+
+.menu-item {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 12px;
+
+    padding: 15px 14px;
+
+    background: #f7f8fa;
+
+    border-radius: 13px;
+}
+
+.menu-name {
+    font-size: 17px;
+
+    font-weight: 650;
+
+    line-height: 1.4;
+}
+
+.menu-price {
+    flex-shrink: 0;
+
+    font-size: 16px;
+
+    font-weight: 800;
+
+    white-space: nowrap;
+}
+
+
+/* =========================
+   안내
+========================= */
+
+.notice {
+    margin-top: 17px;
+
+    padding: 14px;
+
+    border-radius: 13px;
+
+    background: #f5f6f8;
+
+    color: #888;
+
+    font-size: 12px;
+
+    line-height: 1.6;
+
+    text-align: center;
+}
+
+
+/* =========================
+   하단
+========================= */
+
+.footer {
+    text-align: center;
+
+    margin-top: 20px;
 
     color: #999;
 
@@ -191,26 +282,37 @@ body {
 }
 
 
-/* 작은 화면 */
+/* =========================
+   작은 휴대폰
+========================= */
 
 @media (max-width: 380px) {
+
+    body {
+        padding:
+            14px 10px 28px;
+    }
 
     .header h1 {
         font-size: 26px;
     }
 
-    .restaurant-name {
-        font-size: 25px;
+    .restaurant-button {
+        font-size: 16px;
+        min-height: 58px;
     }
 
-    .menu-button {
-        font-size: 18px;
+    .menu-name {
+        font-size: 16px;
+    }
+
+    .menu-price {
+        font-size: 15px;
     }
 
 }
 
 </style>
-
 </head>
 
 
@@ -234,7 +336,7 @@ body {
     </div>
 
 
-    <!-- 오늘 날짜 -->
+    <!-- 날짜 -->
 
     <div class="date-box">
 
@@ -246,41 +348,82 @@ body {
     </div>
 
 
-    <!-- 은행골 -->
+    <!-- 식당 버튼 -->
 
-    <div class="restaurant-card">
+    <div class="restaurant-buttons">
 
-        <div class="restaurant-name">
+        <button
+            class="restaurant-button bank"
+            onclick="showRestaurant('bank')">
+
+            은행골
+
+        </button>
+
+
+        <button
+            class="restaurant-button law"
+            onclick="showRestaurant('law')">
+
+            법고을
+
+        </button>
+
+
+        <button
+            class="restaurant-button gold"
+            onclick="showRestaurant('gold')">
+
+            금잔디
+
+        </button>
+
+    </div>
+
+
+    <!-- 메뉴 -->
+
+    <div class="menu-card">
+
+        <div
+            class="restaurant-title"
+            id="restaurantTitle">
 
             은행골식당
 
         </div>
 
 
-        <div class="location">
+        <div
+            class="restaurant-location"
+            id="restaurantLocation">
 
-            600주년기념관 지하 1층<br>
-
-            ☎ 02-740-1926
+            600주년기념관 지하 1층
+            · 02-740-1926
 
         </div>
 
 
-        <!-- 정확한 은행골 공식 메뉴 주소 -->
+        <div
+            class="menu-date"
+            id="menuDate">
 
-        <a
-            class="menu-button"
-            href="https://www.skku.edu/skku/campus/support/welfare_11.do?mode=info&conspaceCd=10201031&srResId=2&srShowTime=D&srCategory=L">
+            2026년 8월 14일 금요일
 
-            🍚 오늘의 은행골 메뉴 보기
-
-        </a>
+        </div>
 
 
-        <div class="description">
+        <div
+            class="menu-list"
+            id="menuList">
 
-            성균관대학교 공식 식단 페이지로<br>
-            이동합니다.
+        </div>
+
+
+        <div class="notice">
+
+            성균관대학교 공식 식단 페이지의
+            현재 메뉴를 기준으로 표시합니다.
 
         </div>
 
@@ -289,7 +432,7 @@ body {
 
     <div class="footer">
 
-        성균관대학교 공식 은행골식당 메뉴
+        성균관대학교 식당 / 메뉴
 
     </div>
 
@@ -298,9 +441,11 @@ body {
 
 <script>
 
-/* 오늘 날짜 */
+/* =================================================
+   현재 날짜
+================================================= */
 
-function showToday() {
+function getTodayText() {
 
     const now = new Date();
 
@@ -314,21 +459,228 @@ function showToday() {
         "토요일"
     ];
 
-    const text =
+    return (
         now.getFullYear() +
         "년 " +
         (now.getMonth() + 1) +
         "월 " +
         now.getDate() +
         "일 " +
-        days[now.getDay()];
-
-    document.getElementById(
-        "today"
-    ).textContent = text;
+        days[now.getDay()]
+    );
 }
 
-showToday();
+
+document.getElementById(
+    "today"
+).textContent = getTodayText();
+
+
+/* =================================================
+   식당 메뉴
+================================================= */
+
+const restaurants = {
+
+
+    /* =========================
+       은행골
+    ========================= */
+
+    bank: {
+
+        name: "은행골식당",
+
+        location:
+            "600주년기념관 지하 1층 · 02-740-1926",
+
+        date:
+            "2026년 8월 14일 금요일",
+
+        menus: [
+
+            {
+                name: "누룽지장각백숙",
+                price: "6,500원"
+            },
+
+            {
+                name: "은행골김치찌개",
+                price: "5,000원"
+            },
+
+            {
+                name: "전복반계탕",
+                price: "11,000원"
+            },
+
+            {
+                name: "치즈돈가스",
+                price: "7,000원"
+            },
+
+            {
+                name: "도쿄함박스테이크",
+                price: "10,000원"
+            },
+
+            {
+                name: "치킨가라아게카레라이스",
+                price: "6,500원"
+            },
+
+            {
+                name: "초계국수",
+                price: "8,000원"
+            }
+
+        ]
+
+    },
+
+
+    /* =========================
+       법고을
+    ========================= */
+
+    law: {
+
+        name: "법고을식당",
+
+        location:
+            "법학관 지하 2층",
+
+        date:
+            "메뉴 준비 중",
+
+        menus: [
+
+            {
+                name: "법고을 메뉴",
+                price: "확인 중"
+            }
+
+        ]
+
+    },
+
+
+    /* =========================
+       금잔디
+    ========================= */
+
+    gold: {
+
+        name: "금잔디식당",
+
+        location:
+            "경영관 지하 2층",
+
+        date:
+            "메뉴 준비 중",
+
+        menus: [
+
+            {
+                name: "금잔디 메뉴",
+                price: "확인 중"
+            }
+
+        ]
+
+    }
+
+};
+
+
+/* =================================================
+   메뉴 표시
+================================================= */
+
+function showRestaurant(id) {
+
+    const restaurant =
+        restaurants[id];
+
+
+    document.getElementById(
+        "restaurantTitle"
+    ).textContent =
+        restaurant.name;
+
+
+    document.getElementById(
+        "restaurantLocation"
+    ).textContent =
+        restaurant.location;
+
+
+    document.getElementById(
+        "menuDate"
+    ).textContent =
+        restaurant.date;
+
+
+    const list =
+        document.getElementById(
+            "menuList"
+        );
+
+
+    list.innerHTML = "";
+
+
+    restaurant.menus.forEach(
+        function(menu) {
+
+            const item =
+                document.createElement(
+                    "div"
+                );
+
+            item.className =
+                "menu-item";
+
+
+            const name =
+                document.createElement(
+                    "div"
+                );
+
+            name.className =
+                "menu-name";
+
+            name.textContent =
+                menu.name;
+
+
+            const price =
+                document.createElement(
+                    "div"
+                );
+
+            price.className =
+                "menu-price";
+
+            price.textContent =
+                menu.price;
+
+
+            item.appendChild(name);
+
+            item.appendChild(price);
+
+            list.appendChild(item);
+
+        }
+    );
+
+}
+
+
+/* 처음에는 은행골 */
+
+showRestaurant("bank");
 
 </script>
 
