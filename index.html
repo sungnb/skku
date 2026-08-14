@@ -1,0 +1,497 @@
+```html
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width,
+      initial-scale=1.0,
+      maximum-scale=1.0,
+      user-scalable=no">
+
+<meta name="theme-color" content="#f3f6fa">
+
+<title>성균관대 식단</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    background: #f3f6fa;
+    color: #222;
+    font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Noto Sans KR",
+        "Malgun Gothic",
+        sans-serif;
+
+    padding: 18px 14px 30px;
+}
+
+.container {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+
+/* =========================
+   제목
+========================= */
+
+.header {
+    text-align: center;
+    margin-bottom: 18px;
+}
+
+.header h1 {
+    margin: 5px 0 7px;
+
+    font-size: 28px;
+    font-weight: 800;
+
+    letter-spacing: -1.5px;
+}
+
+.header p {
+    margin: 0;
+
+    font-size: 15px;
+    color: #777;
+}
+
+
+/* =========================
+   날짜
+========================= */
+
+.date-box {
+    background: #ffffff;
+
+    border-radius: 18px;
+
+    padding: 15px;
+
+    margin-bottom: 15px;
+
+    text-align: center;
+
+    box-shadow:
+        0 3px 12px rgba(0,0,0,.07);
+}
+
+.date {
+    font-size: 19px;
+    font-weight: 700;
+}
+
+
+/* =========================
+   식당 버튼
+========================= */
+
+.restaurant-buttons {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 10px;
+
+    margin-bottom: 18px;
+}
+
+.restaurant-button {
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-height: 62px;
+
+    border: none;
+
+    border-radius: 17px;
+
+    background: #ffffff;
+
+    color: #222;
+
+    text-decoration: none;
+
+    font-size: 18px;
+
+    font-weight: 800;
+
+    box-shadow:
+        0 3px 12px rgba(0,0,0,.08);
+
+    transition:
+        transform .12s ease,
+        background .12s ease;
+}
+
+.restaurant-button:active {
+    transform: scale(.95);
+}
+
+.restaurant-button.bank {
+    background: #eaf2ff;
+}
+
+.restaurant-button.law {
+    background: #edf8ef;
+}
+
+.restaurant-button.gold {
+    background: #fff7df;
+}
+
+
+/* =========================
+   안내 카드
+========================= */
+
+.info-card {
+
+    background: #ffffff;
+
+    border-radius: 20px;
+
+    padding: 22px 18px;
+
+    box-shadow:
+        0 4px 15px rgba(0,0,0,.08);
+
+    text-align: center;
+}
+
+.info-title {
+
+    font-size: 22px;
+
+    font-weight: 800;
+
+    margin-bottom: 8px;
+}
+
+.info-text {
+
+    color: #777;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+
+    margin-bottom: 18px;
+}
+
+
+/* =========================
+   공식 페이지 버튼
+========================= */
+
+.official-button {
+
+    display: block;
+
+    width: 100%;
+
+    padding: 16px 10px;
+
+    border-radius: 14px;
+
+    background: #1f6feb;
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 17px;
+
+    font-weight: 700;
+}
+
+.official-button:active {
+    opacity: .8;
+}
+
+
+/* =========================
+   하단
+========================= */
+
+.footer {
+
+    text-align: center;
+
+    margin-top: 20px;
+
+    font-size: 12px;
+
+    color: #999;
+}
+
+
+/* =========================
+   작은 휴대폰
+========================= */
+
+@media (max-width: 380px) {
+
+    body {
+        padding:
+            14px 10px 25px;
+    }
+
+    .header h1 {
+        font-size: 25px;
+    }
+
+    .restaurant-button {
+        min-height: 58px;
+        font-size: 16px;
+    }
+
+    .info-title {
+        font-size: 21px;
+    }
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+<div class="container">
+
+
+    <!-- 제목 -->
+
+    <div class="header">
+
+        <h1>
+            성균관대 식단
+        </h1>
+
+        <p>
+            인문사회과학캠퍼스
+        </p>
+
+    </div>
+
+
+    <!-- 날짜 -->
+
+    <div class="date-box">
+
+        <div
+            class="date"
+            id="today">
+        </div>
+
+    </div>
+
+
+    <!-- 식당 버튼 -->
+
+    <div class="restaurant-buttons">
+
+
+        <!-- 은행골 -->
+
+        <a
+            class="restaurant-button bank"
+            href="https://www.skku.edu/skku/campus/support/welfare_11.do?mode=info&conspaceCd=10201031&srResId=2&srShowTime=D&srCategory=L">
+
+            은행골
+
+        </a>
+
+
+        <!-- 법고을 -->
+
+        <a
+            class="restaurant-button law"
+            href="https://www.skku.edu/skku/campus/support/welfare_11.do?mode=info&conspaceCd=10201031&srResId=3&srShowTime=D&srCategory=L">
+
+            법고을
+
+        </a>
+
+
+        <!-- 금잔디 -->
+
+        <a
+            class="restaurant-button gold"
+            href="https://www.skku.edu/skku/campus/support/welfare_11.do?mode=info&conspaceCd=10201031&srResId=4&srShowTime=D&srCategory=L">
+
+            금잔디
+
+        </a>
+
+    </div>
+
+
+    <!-- 안내 -->
+
+    <div class="info-card">
+
+        <div
+            class="info-title"
+            id="selectedName">
+
+            식당을 선택하세요
+
+        </div>
+
+
+        <div
+            class="info-text"
+            id="selectedText">
+
+            위의 버튼을 누르면<br>
+            성균관대학교 공식 식단 페이지가 열립니다.
+
+        </div>
+
+
+        <a
+            class="official-button"
+            href="https://www.skku.edu/skku/campus/support/welfare_11.do"
+            target="_blank"
+            rel="noopener">
+
+            성균관대 전체 식단 보기
+
+        </a>
+
+    </div>
+
+
+    <div class="footer">
+
+        성균관대학교 공식 식당 메뉴
+
+    </div>
+
+</div>
+
+
+<script>
+
+/* =========================
+   오늘 날짜
+========================= */
+
+function showToday() {
+
+    const now = new Date();
+
+    const days = [
+        "일요일",
+        "월요일",
+        "화요일",
+        "수요일",
+        "목요일",
+        "금요일",
+        "토요일"
+    ];
+
+    const year =
+        now.getFullYear();
+
+    const month =
+        now.getMonth() + 1;
+
+    const date =
+        now.getDate();
+
+    const day =
+        days[now.getDay()];
+
+
+    document.getElementById(
+        "today"
+    ).textContent =
+
+        year + "년 " +
+        month + "월 " +
+        date + "일 " +
+        day;
+
+}
+
+
+/* =========================
+   버튼 이름 표시
+========================= */
+
+const buttons =
+    document.querySelectorAll(
+        ".restaurant-button"
+    );
+
+const selectedName =
+    document.getElementById(
+        "selectedName"
+    );
+
+const selectedText =
+    document.getElementById(
+        "selectedText"
+    );
+
+
+buttons.forEach(function(button) {
+
+    button.addEventListener(
+        "click",
+        function() {
+
+            const name =
+                button.textContent.trim();
+
+            selectedName.textContent =
+                name;
+
+            selectedText.innerHTML =
+                name +
+                " 메뉴 페이지로<br>" +
+                "이동합니다.";
+
+        }
+    );
+
+});
+
+
+/* =========================
+   시작
+========================= */
+
+showToday();
+
+</script>
+
+</body>
+</html>
+```
