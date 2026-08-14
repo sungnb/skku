@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
+
 <meta charset="UTF-8">
 
 <meta name="viewport"
@@ -14,22 +15,33 @@
 <title>은행골 중식</title>
 
 <style>
+
 * {
     box-sizing: border-box;
     -webkit-tap-highlight-color: transparent;
 }
 
+html,
 body {
     margin: 0;
-    padding: 18px 14px 35px;
+    padding: 0;
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
     background: #f3f6fa;
     color: #222;
+
     font-family:
         -apple-system,
         BlinkMacSystemFont,
         "Noto Sans KR",
         "Malgun Gothic",
         sans-serif;
+
+    padding:
+        18px 14px 35px;
 }
 
 .container {
@@ -38,7 +50,11 @@ body {
     margin: 0 auto;
 }
 
-/* 제목 */
+
+/* =========================================
+   제목
+========================================= */
+
 .header {
     text-align: center;
     margin-bottom: 18px;
@@ -46,25 +62,39 @@ body {
 
 .header h1 {
     margin: 5px 0 7px;
+
     font-size: 30px;
     font-weight: 800;
+
     letter-spacing: -1.5px;
 }
 
 .header p {
     margin: 0;
+
     color: #777;
+
     font-size: 15px;
 }
 
-/* 날짜 */
+
+/* =========================================
+   날짜
+========================================= */
+
 .date-box {
-    background: #fff;
+    background: #ffffff;
+
     border-radius: 20px;
+
     padding: 17px;
+
     margin-bottom: 15px;
+
     text-align: center;
-    box-shadow: 0 4px 14px rgba(0,0,0,.07);
+
+    box-shadow:
+        0 4px 14px rgba(0,0,0,.07);
 }
 
 .date {
@@ -72,88 +102,187 @@ body {
     font-weight: 800;
 }
 
-/* 식당 */
+
+/* =========================================
+   은행골 카드
+========================================= */
+
 .restaurant-card {
-    background: #fff;
+    background: #ffffff;
+
     border-radius: 22px;
+
     padding: 23px 16px;
-    box-shadow: 0 5px 18px rgba(0,0,0,.08);
+
+    box-shadow:
+        0 5px 18px rgba(0,0,0,.08);
 }
+
+
+/* =========================================
+   식당 이름
+========================================= */
 
 .restaurant-name {
     text-align: center;
+
     font-size: 28px;
+
     font-weight: 800;
+
     margin-bottom: 7px;
 }
 
+
+/* =========================================
+   식당 정보
+========================================= */
+
 .location {
     text-align: center;
+
     color: #777;
+
     font-size: 13px;
+
+    line-height: 1.7;
+
     margin-bottom: 20px;
 }
 
-/* 중식 표시 */
+
+/* =========================================
+   중식 제목
+========================================= */
+
 .meal-title {
     text-align: center;
-    font-size: 21px;
+
+    font-size: 22px;
+
     font-weight: 800;
-    margin-bottom: 14px;
+
+    margin-bottom: 15px;
 }
+
+
+/* =========================================
+   메뉴
+========================================= */
 
 .menu-list {
     display: flex;
+
     flex-direction: column;
+
     gap: 9px;
 }
 
 .menu-item {
     display: flex;
-    justify-content: space-between;
+
     align-items: center;
+
+    justify-content: space-between;
+
     gap: 12px;
 
     padding: 15px 14px;
 
     background: #f7f8fa;
+
     border-radius: 13px;
 }
+
+
+/* 메뉴 코너 */
+
+.menu-corner {
+    min-width: 82px;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    color: #777;
+
+    margin-bottom: 3px;
+}
+
+
+/* 메뉴 이름 */
 
 .menu-name {
     font-size: 17px;
+
     font-weight: 650;
+
     line-height: 1.4;
 }
 
+
+/* 가격 */
+
 .menu-price {
     flex-shrink: 0;
+
     white-space: nowrap;
+
     font-size: 16px;
+
     font-weight: 800;
 }
 
-/* 안내 */
+
+/* =========================================
+   안내
+========================================= */
+
 .notice {
     margin-top: 17px;
+
     padding: 13px;
+
     border-radius: 13px;
+
     background: #f5f6f8;
+
     color: #888;
+
     font-size: 12px;
+
     line-height: 1.6;
+
     text-align: center;
 }
 
-/* 하단 */
+
+/* =========================================
+   하단
+========================================= */
+
 .footer {
     text-align: center;
+
     margin-top: 20px;
+
     color: #999;
+
     font-size: 12px;
 }
 
+
+/* =========================================
+   작은 휴대폰
+========================================= */
+
 @media (max-width: 380px) {
+
+    body {
+        padding:
+            14px 10px 28px;
+    }
+
     .header h1 {
         font-size: 26px;
     }
@@ -169,120 +298,272 @@ body {
     .menu-price {
         font-size: 15px;
     }
+
 }
+
 </style>
+
 </head>
+
 
 <body>
 
 <div class="container">
 
+
+    <!-- =================================
+         제목
+    ================================== -->
+
     <div class="header">
-        <h1>성균관대 식단</h1>
-        <p>인문사회과학캠퍼스</p>
+
+        <h1>
+            성균관대 식단
+        </h1>
+
+        <p>
+            인문사회과학캠퍼스
+        </p>
+
     </div>
 
+
+    <!-- =================================
+         날짜
+    ================================== -->
+
     <div class="date-box">
-        <div class="date" id="today"></div>
+
+        <div
+            class="date"
+            id="today">
+        </div>
+
     </div>
+
+
+    <!-- =================================
+         은행골
+    ================================== -->
 
     <div class="restaurant-card">
 
+
         <div class="restaurant-name">
+
             은행골식당
+
         </div>
+
 
         <div class="location">
+
             600주년기념관 지하 1층<br>
-            02-740-1926
+
+            02-740-1926<br>
+
+            중식 11:00~14:00
+            (방학 중 11:00~13:30)
+
         </div>
 
+
+        <!-- =================================
+             중식
+        ================================== -->
+
         <div class="meal-title">
+
             🍚 중식
+
         </div>
+
 
         <div class="menu-list">
 
+
+            <!-- 1 -->
             <div class="menu-item">
-                <div class="menu-name">
-                    누룽지장각백숙
+
+                <div>
+
+                    <div class="menu-corner">
+                        봄이온 소반
+                    </div>
+
+                    <div class="menu-name">
+                        누룽지장각백숙
+                    </div>
+
                 </div>
+
                 <div class="menu-price">
                     6,500원
                 </div>
+
             </div>
 
+
+            <!-- 2 -->
             <div class="menu-item">
-                <div class="menu-name">
-                    은행골김치찌개
+
+                <div>
+
+                    <div class="menu-corner">
+                        봄이온 소반
+                    </div>
+
+                    <div class="menu-name">
+                        은행골김치찌개
+                    </div>
+
                 </div>
+
                 <div class="menu-price">
                     5,000원
                 </div>
+
             </div>
 
+
+            <!-- 3 -->
             <div class="menu-item">
-                <div class="menu-name">
-                    전복반계탕
+
+                <div>
+
+                    <div class="menu-corner">
+                        봄이온 소반
+                    </div>
+
+                    <div class="menu-name">
+                        전복반계탕
+                    </div>
+
                 </div>
+
                 <div class="menu-price">
                     11,000원
                 </div>
+
             </div>
 
+
+            <!-- 4 -->
             <div class="menu-item">
-                <div class="menu-name">
-                    치즈돈가스
+
+                <div>
+
+                    <div class="menu-corner">
+                        가츠엔
+                    </div>
+
+                    <div class="menu-name">
+                        치즈돈가스
+                    </div>
+
                 </div>
+
                 <div class="menu-price">
                     7,000원
                 </div>
+
             </div>
 
+
+            <!-- 5 -->
             <div class="menu-item">
-                <div class="menu-name">
-                    도쿄함박스테이크
+
+                <div>
+
+                    <div class="menu-corner">
+                        가츠엔
+                    </div>
+
+                    <div class="menu-name">
+                        도쿄함박스테이크
+                    </div>
+
                 </div>
+
                 <div class="menu-price">
                     10,000원
                 </div>
+
             </div>
 
+
+            <!-- 6 -->
             <div class="menu-item">
-                <div class="menu-name">
-                    치킨가라아게카레라이스
+
+                <div>
+
+                    <div class="menu-corner">
+                        가츠엔
+                    </div>
+
+                    <div class="menu-name">
+                        치킨가라아게카레라이스
+                    </div>
+
                 </div>
+
                 <div class="menu-price">
                     6,500원
                 </div>
+
             </div>
 
+
+            <!-- 7 -->
             <div class="menu-item">
-                <div class="menu-name">
-                    초계국수
+
+                <div>
+
+                    <div class="menu-corner">
+                        싱푸차이나
+                    </div>
+
+                    <div class="menu-name">
+                        초계국수
+                    </div>
+
                 </div>
+
                 <div class="menu-price">
                     8,000원
                 </div>
+
             </div>
 
+
         </div>
+
 
         <div class="notice">
-            은행골식당의 중식 메뉴입니다.
+
+            2026년 8월 14일 은행골식당 중식 메뉴
+
         </div>
 
+
     </div>
 
+
     <div class="footer">
+
         성균관대학교 은행골식당
+
     </div>
+
 
 </div>
 
+
 <script>
 
-/* 오늘 날짜 표시 */
+/* =========================================
+   오늘 날짜
+========================================= */
 
 function showToday() {
 
@@ -299,12 +580,18 @@ function showToday() {
     ];
 
     const text =
-        now.getFullYear() + "년 " +
-        (now.getMonth() + 1) + "월 " +
-        now.getDate() + "일 " +
+        now.getFullYear() +
+        "년 " +
+        (now.getMonth() + 1) +
+        "월 " +
+        now.getDate() +
+        "일 " +
         days[now.getDay()];
 
-    document.getElementById("today").textContent = text;
+    document.getElementById(
+        "today"
+    ).textContent = text;
+
 }
 
 showToday();
