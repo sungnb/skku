@@ -49,6 +49,10 @@ body {
 
     padding:
         18px 14px 35px;
+
+    transition:
+        background .2s ease,
+        color .2s ease;
 }
 
 
@@ -63,45 +67,12 @@ body {
 
 
 /* =========================================
-   제목
-========================================= */
-
-.header {
-
-    text-align: center;
-
-    margin-bottom: 18px;
-}
-
-
-.header h1 {
-
-    margin:
-        5px 0 7px;
-
-    font-size: 30px;
-
-    font-weight: 800;
-
-    letter-spacing: -1.5px;
-}
-
-
-.header p {
-
-    margin: 0;
-
-    color: #777;
-
-    font-size: 15px;
-}
-
-
-/* =========================================
    날짜
 ========================================= */
 
 .date-box {
+
+    position: relative;
 
     background: #ffffff;
 
@@ -115,6 +86,10 @@ body {
 
     box-shadow:
         0 4px 14px rgba(0,0,0,.07);
+
+    transition:
+        background .2s ease,
+        box-shadow .2s ease;
 }
 
 
@@ -123,6 +98,121 @@ body {
     font-size: 20px;
 
     font-weight: 800;
+}
+
+
+/* =========================================
+   설정 버튼
+========================================= */
+
+.settings {
+
+    position: absolute;
+
+    right: 12px;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+}
+
+
+.settings-button {
+
+    width: 30px;
+
+    height: 30px;
+
+    border: none;
+
+    background: transparent;
+
+    border-radius: 50%;
+
+    font-size: 17px;
+
+    padding: 0;
+
+    cursor: pointer;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    color: #777;
+}
+
+
+.settings-button:active {
+
+    background: #eeeeee;
+}
+
+
+/* =========================================
+   설정 메뉴
+========================================= */
+
+.theme-menu {
+
+    display: none;
+
+    position: absolute;
+
+    right: 0;
+
+    top: 34px;
+
+    width: 105px;
+
+    padding: 5px;
+
+    background: #ffffff;
+
+    border-radius: 11px;
+
+    box-shadow:
+        0 4px 16px rgba(0,0,0,.15);
+
+    z-index: 100;
+
+    text-align: left;
+}
+
+
+.theme-menu.show {
+
+    display: block;
+}
+
+
+.theme-option {
+
+    width: 100%;
+
+    border: none;
+
+    background: transparent;
+
+    padding: 8px 9px;
+
+    border-radius: 8px;
+
+    font-size: 13px;
+
+    text-align: left;
+
+    cursor: pointer;
+
+    color: #333;
+}
+
+
+.theme-option:active {
+
+    background: #f0f1f3;
 }
 
 
@@ -140,6 +230,10 @@ body {
 
     box-shadow:
         0 5px 18px rgba(0,0,0,.08);
+
+    transition:
+        background .2s ease,
+        box-shadow .2s ease;
 }
 
 
@@ -222,6 +316,9 @@ body {
     background: #f7f8fa;
 
     border-radius: 13px;
+
+    transition:
+        background .2s ease;
 }
 
 
@@ -282,6 +379,10 @@ body {
     line-height: 1.6;
 
     text-align: center;
+
+    transition:
+        background .2s ease,
+        color .2s ease;
 }
 
 
@@ -354,6 +455,101 @@ body {
 
 
 /* =========================================
+   어두운 모드
+========================================= */
+
+body.dark {
+
+    background: #17191c;
+
+    color: #eeeeee;
+}
+
+
+body.dark .date-box {
+
+    background: #24272b;
+
+    box-shadow:
+        0 4px 14px rgba(0,0,0,.25);
+}
+
+
+body.dark .restaurant-card {
+
+    background: #24272b;
+
+    box-shadow:
+        0 5px 18px rgba(0,0,0,.25);
+}
+
+
+body.dark .location {
+
+    color: #aaaaaa;
+}
+
+
+body.dark .menu-item {
+
+    background: #303338;
+}
+
+
+body.dark .menu-corner {
+
+    color: #aaaaaa;
+}
+
+
+body.dark .notice {
+
+    background: #303338;
+
+    color: #aaaaaa;
+}
+
+
+body.dark .settings-button {
+
+    color: #cccccc;
+}
+
+
+body.dark .settings-button:active {
+
+    background: #3a3d42;
+}
+
+
+body.dark .theme-menu {
+
+    background: #303338;
+
+    box-shadow:
+        0 4px 16px rgba(0,0,0,.4);
+}
+
+
+body.dark .theme-option {
+
+    color: #eeeeee;
+}
+
+
+body.dark .theme-option:active {
+
+    background: #41444a;
+}
+
+
+body.dark .footer {
+
+    color: #777777;
+}
+
+
+/* =========================================
    작은 휴대폰
 ========================================= */
 
@@ -363,12 +559,6 @@ body {
 
         padding:
             14px 10px 28px;
-    }
-
-
-    .header h1 {
-
-        font-size: 26px;
     }
 
 
@@ -403,23 +593,6 @@ body {
 
 
     <!-- =================================
-         제목
-    ================================== -->
-
-    <div class="header">
-
-        <h1>
-            성균관대 식단
-        </h1>
-
-        <p>
-            인문사회과학캠퍼스
-        </p>
-
-    </div>
-
-
-    <!-- =================================
          날짜
     ================================== -->
 
@@ -430,6 +603,46 @@ body {
             id="today">
 
             불러오는 중...
+
+        </div>
+
+
+        <!-- 설정 -->
+
+        <div class="settings">
+
+            <button
+                class="settings-button"
+                id="settingsButton"
+                aria-label="화면 설정">
+
+                ⚙
+
+            </button>
+
+
+            <div
+                class="theme-menu"
+                id="themeMenu">
+
+                <button
+                    class="theme-option"
+                    id="lightMode">
+
+                    ☀ 밝게
+
+                </button>
+
+
+                <button
+                    class="theme-option"
+                    id="darkMode">
+
+                    🌙 어둡게
+
+                </button>
+
+            </div>
 
         </div>
 
@@ -538,6 +751,112 @@ const menuList =
 const notice =
     document.getElementById("notice");
 
+
+/* =========================================
+   설정 메뉴
+========================================= */
+
+const settingsButton =
+    document.getElementById("settingsButton");
+
+
+const themeMenu =
+    document.getElementById("themeMenu");
+
+
+const lightMode =
+    document.getElementById("lightMode");
+
+
+const darkMode =
+    document.getElementById("darkMode");
+
+
+/* =========================================
+   저장된 화면 모드 불러오기
+========================================= */
+
+const savedTheme =
+    localStorage.getItem("theme");
+
+
+if (savedTheme === "dark") {
+
+    document.body.classList.add("dark");
+
+}
+
+
+/* =========================================
+   설정 버튼
+========================================= */
+
+settingsButton.addEventListener(
+    "click",
+    function(event) {
+
+        event.stopPropagation();
+
+        themeMenu.classList.toggle("show");
+
+    }
+);
+
+
+/* =========================================
+   밝게
+========================================= */
+
+lightMode.addEventListener(
+    "click",
+    function() {
+
+        document.body.classList.remove("dark");
+
+        localStorage.setItem(
+            "theme",
+            "light"
+        );
+
+        themeMenu.classList.remove("show");
+
+    }
+);
+
+
+/* =========================================
+   어둡게
+========================================= */
+
+darkMode.addEventListener(
+    "click",
+    function() {
+
+        document.body.classList.add("dark");
+
+        localStorage.setItem(
+            "theme",
+            "dark"
+        );
+
+        themeMenu.classList.remove("show");
+
+    }
+);
+
+
+/* =========================================
+   화면 다른 곳을 누르면 메뉴 닫기
+========================================= */
+
+document.addEventListener(
+    "click",
+    function() {
+
+        themeMenu.classList.remove("show");
+
+    }
+);
 
 
 /* =========================================
@@ -678,10 +997,12 @@ function renderMenus(data) {
 
         `;
 
+
         notice.textContent =
             "해당 날짜에는 봄이온 소반 메뉴가 없습니다.";
 
         return;
+
     }
 
 
@@ -693,6 +1014,7 @@ function renderMenus(data) {
 
         const item =
             document.createElement("div");
+
 
         item.className =
             "menu-item";
@@ -740,6 +1062,7 @@ function renderMenus(data) {
     notice.textContent =
         formatDate(date) +
         " 은행골식당 중식 · 봄이온 소반";
+
 }
 
 
