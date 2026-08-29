@@ -29,6 +29,10 @@
 }
 
 
+html {
+    --text-scale: 1;
+}
+
 html,
 body {
     margin: 0;
@@ -99,7 +103,7 @@ body {
 
 .date {
 
-    font-size: 20px;
+    font-size: calc(20px * var(--text-scale));
 
     font-weight: 800;
 }
@@ -133,7 +137,7 @@ body {
 
     border-radius: 50%;
 
-    font-size: 17px;
+    font-size: calc(17px * var(--text-scale));
 
     padding: 0;
 
@@ -169,7 +173,7 @@ body {
 
     top: 34px;
 
-    width: 105px;
+    width: 180px;
 
     padding: 5px;
 
@@ -204,7 +208,7 @@ body {
 
     border-radius: 8px;
 
-    font-size: 13px;
+    font-size: calc(13px * var(--text-scale));
 
     text-align: left;
 
@@ -249,7 +253,7 @@ body {
 
     text-align: center;
 
-    font-size: 28px;
+    font-size: calc(28px * var(--text-scale));
 
     font-weight: 800;
 
@@ -267,7 +271,7 @@ body {
 
     color: #777;
 
-    font-size: 13px;
+    font-size: calc(13px * var(--text-scale));
 
     line-height: 1.7;
 
@@ -283,7 +287,7 @@ body {
 
     text-align: center;
 
-    font-size: 22px;
+    font-size: calc(22px * var(--text-scale));
 
     font-weight: 800;
 
@@ -330,7 +334,7 @@ body {
 
     min-width: 82px;
 
-    font-size: 12px;
+    font-size: calc(12px * var(--text-scale));
 
     font-weight: 700;
 
@@ -342,7 +346,7 @@ body {
 
 .menu-name {
 
-    font-size: 17px;
+    font-size: calc(17px * var(--text-scale));
 
     font-weight: 650;
 
@@ -356,7 +360,7 @@ body {
 
     white-space: nowrap;
 
-    font-size: 16px;
+    font-size: calc(16px * var(--text-scale));
 
     font-weight: 800;
 }
@@ -378,7 +382,7 @@ body {
 
     color: #888;
 
-    font-size: 12px;
+    font-size: calc(12px * var(--text-scale));
 
     line-height: 1.6;
 
@@ -402,7 +406,7 @@ body {
 
     color: #888;
 
-    font-size: 15px;
+    font-size: calc(15px * var(--text-scale));
 }
 
 
@@ -418,7 +422,7 @@ body {
 
     color: #b44;
 
-    font-size: 14px;
+    font-size: calc(14px * var(--text-scale));
 
     line-height: 1.7;
 }
@@ -436,7 +440,7 @@ body {
 
     color: #888;
 
-    font-size: 15px;
+    font-size: calc(15px * var(--text-scale));
 
     line-height: 1.7;
 }
@@ -454,7 +458,7 @@ body {
 
     color: #999;
 
-    font-size: 12px;
+    font-size: calc(12px * var(--text-scale));
 }
 
 
@@ -546,6 +550,66 @@ body.dark .theme-option:active {
     background: #41444a;
 }
 
+/* =========================================
+   글자 크기 설정
+========================================= */
+
+.font-size-option {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.font-size-option .font-percent {
+    font-size: 11px;
+    color: #888;
+    font-weight: 700;
+}
+
+.font-size-panel {
+    display: none;
+    padding: 7px 9px 8px;
+}
+
+.font-size-panel.show {
+    display: block;
+}
+
+.font-size-value {
+    display: block;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 800;
+    margin-bottom: 4px;
+}
+
+.font-size-range {
+    display: block;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    accent-color: #2864e8;
+    cursor: pointer;
+}
+
+.font-size-labels {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1px;
+    font-size: 10px;
+    color: #888;
+}
+
+body.dark .font-size-option .font-percent,
+body.dark .font-size-labels {
+    color: #aaa;
+}
+
+body.dark .font-size-panel {
+    border-top: 1px solid rgba(255,255,255,.08);
+}
+
+
 
 body.dark .footer {
 
@@ -568,19 +632,19 @@ body.dark .footer {
 
     .restaurant-name {
 
-        font-size: 25px;
+        font-size: calc(25px * var(--text-scale));
     }
 
 
     .menu-name {
 
-        font-size: 16px;
+        font-size: calc(16px * var(--text-scale));
     }
 
 
     .menu-price {
 
-        font-size: 15px;
+        font-size: calc(15px * var(--text-scale));
     }
 
 }
@@ -645,6 +709,47 @@ body.dark .footer {
                     🌙 어둡게
 
                 </button>
+
+                <button
+                    class="theme-option font-size-option"
+                    id="fontSizeButton"
+                    type="button">
+
+                    <span>A 글자 크기</span>
+                    <span
+                        class="font-percent"
+                        id="fontPercentButton">
+                        100%
+                    </span>
+
+                </button>
+
+                <div
+                    class="font-size-panel"
+                    id="fontSizePanel">
+
+                    <span
+                        class="font-size-value"
+                        id="fontSizeValue">
+                        100%
+                    </span>
+
+                    <input
+                        class="font-size-range"
+                        id="fontSizeRange"
+                        type="range"
+                        min="80"
+                        max="150"
+                        step="1"
+                        value="100"
+                        aria-label="글자 크기">
+
+                    <div class="font-size-labels">
+                        <span>80%</span>
+                        <span>150%</span>
+                    </div>
+
+                </div>
 
             </div>
 
@@ -861,6 +966,121 @@ document.addEventListener(
 
     }
 );
+
+
+/* =========================================
+   글자 크기
+========================================= */
+
+const fontSizeButton =
+    document.getElementById("fontSizeButton");
+
+const fontSizePanel =
+    document.getElementById("fontSizePanel");
+
+const fontSizeRange =
+    document.getElementById("fontSizeRange");
+
+const fontSizeValue =
+    document.getElementById("fontSizeValue");
+
+const fontPercentButton =
+    document.getElementById("fontPercentButton");
+
+const FONT_SIZE_KEY =
+    "bankgolFontSize";
+
+
+function applyFontSize(value, save = true) {
+
+    const percent =
+        Math.min(
+            150,
+            Math.max(
+                80,
+                Number(value) || 100
+            )
+        );
+
+    document.documentElement.style
+        .setProperty(
+            "--text-scale",
+            percent / 100
+        );
+
+    fontSizeRange.value = percent;
+
+    fontSizeValue.textContent =
+        percent + "%";
+
+    fontPercentButton.textContent =
+        percent + "%";
+
+    if (save) {
+
+        localStorage.setItem(
+            FONT_SIZE_KEY,
+            String(percent)
+        );
+
+    }
+
+}
+
+
+function loadFontSize() {
+
+    const saved =
+        localStorage.getItem(
+            FONT_SIZE_KEY
+        );
+
+    applyFontSize(
+        saved || 100,
+        false
+    );
+
+}
+
+
+fontSizeButton.addEventListener(
+    "click",
+    function(event) {
+
+        event.stopPropagation();
+
+        fontSizePanel.classList.toggle(
+            "show"
+        );
+
+    }
+);
+
+
+fontSizePanel.addEventListener(
+    "click",
+    function(event) {
+
+        event.stopPropagation();
+
+    }
+);
+
+
+fontSizeRange.addEventListener(
+    "input",
+    function() {
+
+        applyFontSize(
+            this.value,
+            true
+        );
+
+    }
+);
+
+
+loadFontSize();
 
 
 /* =========================================
