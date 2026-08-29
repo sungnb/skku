@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="ko">
 
 <head>
@@ -6,20 +7,19 @@
 <meta charset="UTF-8">
 
 <meta name="viewport"
-      content="width=device-width,
-      initial-scale=1.0,
-      maximum-scale=1.0,
-      user-scalable=no">
+   content="width=device-width,
+   initial-scale=1.0,
+   maximum-scale=1.0,
+   user-scalable=no">
 
 <link rel="apple-touch-icon"
       sizes="192x192"
       href="은행골-192.png">
 
 <meta name="theme-color"
-      content="#f3f6fa">
+   content="#f3f6fa">
 
 <title>은행골 중식</title>
-
 
 <style>
 
@@ -550,65 +550,121 @@ body.dark .theme-option:active {
     background: #41444a;
 }
 
+
 /* =========================================
    글자 크기 설정
 ========================================= */
 
 .font-size-option {
+
     display: flex;
+
     align-items: center;
-    justify-content: space-between;
+
+    justify-content: flex-start;
+
+    gap: 8px;
 }
 
-.font-size-option .font-percent {
-    font-size: 11px;
-    color: #888;
-    font-weight: 700;
-}
 
 .font-size-panel {
+
     display: none;
+
     padding: 7px 9px 8px;
 }
 
+
 .font-size-panel.show {
+
     display: block;
 }
+
 
 .font-size-value {
-    display: block;
-    text-align: center;
-    font-size: 12px;
-    font-weight: 800;
-    margin-bottom: 4px;
-}
 
-.font-size-range {
-    display: block;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    accent-color: #2864e8;
-    cursor: pointer;
-}
-
-.font-size-labels {
     display: flex;
-    justify-content: space-between;
-    margin-top: 1px;
-    font-size: 10px;
-    color: #888;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 15px;
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    margin: 0;
 }
 
-body.dark .font-size-option .font-percent,
-body.dark .font-size-labels {
-    color: #aaa;
+
+.font-size-arrow {
+
+    width: 30px;
+
+    height: 28px;
+
+    border: none;
+
+    background: transparent;
+
+    border-radius: 7px;
+
+    color: #222;
+
+    font-size: 17px;
+
+    font-weight: 800;
+
+    cursor: pointer;
+
+    padding: 0;
 }
+
+
+.font-size-arrow:active {
+
+    background: #eeeeee;
+}
+
+
+.font-percent {
+
+    font-size: 13px;
+
+    color: #222;
+
+    font-weight: 800;
+
+    min-width: 43px;
+
+    text-align: center;
+}
+
+
+body.dark .font-size-arrow {
+
+    color: #ffffff;
+}
+
+
+body.dark .font-percent {
+
+    color: #ffffff;
+}
+
 
 body.dark .font-size-panel {
+
     border-top: 1px solid rgba(255,255,255,.08);
 }
 
+
+body.dark .font-size-arrow:active {
+
+    background: #41444a;
+}
 
 
 body.dark .footer {
@@ -653,101 +709,107 @@ body.dark .footer {
 
 </head>
 
-
 <body>
-
 
 <div class="container">
 
+```
+<!-- =================================
+     날짜
+================================== -->
 
-    <!-- =================================
-         날짜
-    ================================== -->
+<div class="date-box">
 
-    <div class="date-box">
+    <div
+        class="date"
+        id="today">
+
+        불러오는 중...
+
+    </div>
+
+
+    <!-- 설정 -->
+
+    <div class="settings">
+
+        <button
+            class="settings-button"
+            id="settingsButton"
+            aria-label="화면 설정">
+
+            ⚙
+
+        </button>
+
 
         <div
-            class="date"
-            id="today">
-
-            불러오는 중...
-
-        </div>
-
-
-        <!-- 설정 -->
-
-        <div class="settings">
+            class="theme-menu"
+            id="themeMenu">
 
             <button
-                class="settings-button"
-                id="settingsButton"
-                aria-label="화면 설정">
+                class="theme-option"
+                id="lightMode">
 
-                ⚙
+                ☀ 밝게
+
+            </button>
+
+
+            <button
+                class="theme-option"
+                id="darkMode">
+
+                🌙 어둡게
+
+            </button>
+
+
+            <button
+                class="theme-option font-size-option"
+                id="fontSizeButton"
+                type="button">
+
+                <span>A 글자 크기</span>
 
             </button>
 
 
             <div
-                class="theme-menu"
-                id="themeMenu">
+                class="font-size-panel"
+                id="fontSizePanel">
 
-                <button
-                    class="theme-option"
-                    id="lightMode">
+                <div class="font-size-value">
 
-                    ☀ 밝게
+                    <button
+                        class="font-size-arrow"
+                        id="fontDecrease"
+                        type="button"
+                        aria-label="글자 크기 줄이기">
 
-                </button>
+                        ◀
+
+                    </button>
 
 
-                <button
-                    class="theme-option"
-                    id="darkMode">
-
-                    🌙 어둡게
-
-                </button>
-
-                <button
-                    class="theme-option font-size-option"
-                    id="fontSizeButton"
-                    type="button">
-
-                    <span>A 글자 크기</span>
                     <span
                         class="font-percent"
-                        id="fontPercentButton">
-                        100%
-                    </span>
-
-                </button>
-
-                <div
-                    class="font-size-panel"
-                    id="fontSizePanel">
-
-                    <span
-                        class="font-size-value"
                         id="fontSizeValue">
+
                         100%
+
                     </span>
 
-                    <input
-                        class="font-size-range"
-                        id="fontSizeRange"
-                        type="range"
-                        min="80"
-                        max="150"
-                        step="1"
-                        value="100"
-                        aria-label="글자 크기">
 
-                    <div class="font-size-labels">
-                        <span>80%</span>
-                        <span>150%</span>
-                    </div>
+                    <button
+                        class="font-size-arrow"
+                        id="fontIncrease"
+                        type="button"
+                        aria-label="글자 크기 키우기">
+
+                        ▶
+
+                    </button>
 
                 </div>
 
@@ -757,87 +819,88 @@ body.dark .footer {
 
     </div>
 
-
-    <!-- =================================
-         은행골
-    ================================== -->
-
-    <div class="restaurant-card">
+</div>
 
 
-        <div class="restaurant-name">
+<!-- =================================
+     은행골
+================================== -->
 
-            은행골식당
-
-        </div>
-
-
-        <div class="location">
-
-            600주년기념관 지하 1층<br>
-
-            02-740-1926<br>
-
-            중식 11:00~14:00
-            (방학 중 11:00~13:30)
-
-        </div>
+<div class="restaurant-card">
 
 
-        <!-- =================================
-             중식
-        ================================== -->
+    <div class="restaurant-name">
 
-        <div class="meal-title">
-
-            🍚 중식
-
-        </div>
-
-
-        <!-- =================================
-             메뉴
-        ================================== -->
-
-        <div
-            class="menu-list"
-            id="menuList">
-
-            <div class="loading">
-
-                오늘 메뉴를 불러오는 중입니다...
-
-            </div>
-
-        </div>
-
-
-        <!-- =================================
-             안내
-        ================================== -->
-
-        <div
-            class="notice"
-            id="notice">
-
-            성균관대 공식 식단에서
-            봄이온 소반 메뉴를 가져옵니다.
-
-        </div>
-
+        은행골식당
 
     </div>
 
 
-    <div class="footer">
+    <div class="location">
 
-        성균대학교 은행골식당
+        600주년기념관 지하 1층<br>
+
+        02-740-1926<br>
+
+        중식 11:00~14:00
+        (방학 중 11:00~13:30)
+
+    </div>
+
+
+    <!-- =================================
+         중식
+    ================================== -->
+
+    <div class="meal-title">
+
+        🍚 중식
+
+    </div>
+
+
+    <!-- =================================
+         메뉴
+    ================================== -->
+
+    <div
+        class="menu-list"
+        id="menuList">
+
+        <div class="loading">
+
+            오늘 메뉴를 불러오는 중입니다...
+
+        </div>
+
+    </div>
+
+
+    <!-- =================================
+         안내
+    ================================== -->
+
+    <div
+        class="notice"
+        id="notice">
+
+        성균관대 공식 식단에서
+        봄이온 소반 메뉴를 가져옵니다.
 
     </div>
 
 
 </div>
 
+
+<div class="footer">
+
+    성균대학교 은행골식당
+
+</div>
+```
+
+</div>
 
 <script>
 
@@ -975,17 +1038,22 @@ document.addEventListener(
 const fontSizeButton =
     document.getElementById("fontSizeButton");
 
+
 const fontSizePanel =
     document.getElementById("fontSizePanel");
 
-const fontSizeRange =
-    document.getElementById("fontSizeRange");
 
 const fontSizeValue =
     document.getElementById("fontSizeValue");
 
-const fontPercentButton =
-    document.getElementById("fontPercentButton");
+
+const fontDecrease =
+    document.getElementById("fontDecrease");
+
+
+const fontIncrease =
+    document.getElementById("fontIncrease");
+
 
 const FONT_SIZE_KEY =
     "bankgolFontSize";
@@ -993,14 +1061,19 @@ const FONT_SIZE_KEY =
 
 function applyFontSize(value, save = true) {
 
-    const percent =
+    let percent =
+        Number(value) || 100;
+
+
+    percent =
         Math.min(
             150,
             Math.max(
                 80,
-                Number(value) || 100
+                percent
             )
         );
+
 
     document.documentElement.style
         .setProperty(
@@ -1008,13 +1081,10 @@ function applyFontSize(value, save = true) {
             percent / 100
         );
 
-    fontSizeRange.value = percent;
 
     fontSizeValue.textContent =
         percent + "%";
 
-    fontPercentButton.textContent =
-        percent + "%";
 
     if (save) {
 
@@ -1028,12 +1098,31 @@ function applyFontSize(value, save = true) {
 }
 
 
+function changeFontSize(amount) {
+
+    const current =
+        Number(
+            localStorage.getItem(
+                FONT_SIZE_KEY
+            )
+        ) || 100;
+
+
+    applyFontSize(
+        current + amount,
+        true
+    );
+
+}
+
+
 function loadFontSize() {
 
     const saved =
         localStorage.getItem(
             FONT_SIZE_KEY
         );
+
 
     applyFontSize(
         saved || 100,
@@ -1042,6 +1131,8 @@ function loadFontSize() {
 
 }
 
+
+/* 글자 크기 메뉴 열기 */
 
 fontSizeButton.addEventListener(
     "click",
@@ -1057,6 +1148,8 @@ fontSizeButton.addEventListener(
 );
 
 
+/* 글자 크기 패널 클릭 */
+
 fontSizePanel.addEventListener(
     "click",
     function(event) {
@@ -1067,14 +1160,29 @@ fontSizePanel.addEventListener(
 );
 
 
-fontSizeRange.addEventListener(
-    "input",
-    function() {
+/* 5% 감소 */
 
-        applyFontSize(
-            this.value,
-            true
-        );
+fontDecrease.addEventListener(
+    "click",
+    function(event) {
+
+        event.stopPropagation();
+
+        changeFontSize(-5);
+
+    }
+);
+
+
+/* 5% 증가 */
+
+fontIncrease.addEventListener(
+    "click",
+    function(event) {
+
+        event.stopPropagation();
+
+        changeFontSize(5);
 
     }
 );
@@ -1396,7 +1504,6 @@ async function loadMenu() {
 loadMenu();
 
 </script>
-
 
 </body>
 
